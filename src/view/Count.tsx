@@ -3,14 +3,18 @@ import React, { useEffect, useReducer, useRef, useState } from "react";
 const Count = () => {
   const [count, setCount] = useState(0);
   useEffect(() => {
-    setTimeout(() => {
-      console.log(count);
-    },3000);
-  });
+    console.log("hahaha");
+    const id = setInterval(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+    return () => {
+      clearInterval(id);
+    };
+  }, []);
   return (
     <div>
       Count: {count}
-      <button onClick={() => setCount(count + 1)}>+1</button>
+      <button onClick={() => setCount((count) => count + 1)}>+1</button>
     </div>
   );
 };
