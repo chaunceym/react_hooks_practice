@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useHackerNewsApi from "./useHackerNewsApi";
+import useHackerNewsApi from "../hooks/useHackerNewsApi";
 
 const FetchData = () => {
   const [query, setQuery] = useState("redux");
